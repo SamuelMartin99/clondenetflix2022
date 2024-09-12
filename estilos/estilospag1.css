@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap');
+
+
+:root{
+    --verde: rgb(11, 223, 29);
+    --rojo: #E50914;
+    --fondo: #141414;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+
+
+header{
+    padding: 30px 0;
+}
+
+
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header .logotipo {
+    font-family: 'Bebas Neue', cursive;
+    font-weight: normal;
+    color: var(--verde);
+    font-size: 40px;
+}
+
+    header .logotipo span{
+           color: var(--rojo);
+
+}
+
+header nav a {
+    color: #AAA;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+header nav a:hover,
+header nav a.active {
+    color: #fff;
+}
+
+
+
+/* ---- PELICULA PRINCIPAL ----- */
+
+
+.pelicula-principal {
+    font-size: 16px;
+    min-height: 25.62em;
+    color: #FFF;
+    background: linear-gradient(rgba(100, 0, 0, .5), 0%, rgba(50, 0, 0, 0.5) 100%), url(../img/jujutsuposter.jpg);
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.pelicula-principal .contenedor{
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+
+}
+
+
+.pelicula-principal .titulo{
+    font-weight: 600;
+    font-size: 1.9em;
+    margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion{
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.50em;
+    width: 50%;
+    margin-bottom: 1.25;
+}
+
+.pelicula-principal .boton{
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: #FFF;
+    margin: 1em;
+    cursor: pointer;
+    transition: .3s ease all;
+    font-size: 1em;
+
+}
+.pelicula-principal .boton:hover{
+    background: #fff;
+    color: #000;
+}
+.pelicula-principal .boton span{
+
+    margin-right: 1.25em;
+}
+
+
+/*---- contenedor titulo y controles ----*/
+
+.contenedor-titulo-controles{
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+
+.contenedor-titulo-controles h3{
+
+    color: #fff;
+    font-size: 30px;
+
+}
+
+.contenedor-titulo-controles .indicadores button{
+
+    background: #fff;
+    height: 5px;
+    width: 20px;
+    cursor: pointer;
+    border: none;
+    margin-right: 2px;
+
+
+}
+
+
+.contenedor-titulo-controles .indicadores button:hover,
+.contenedor-titulo-controles .indicadores button.active {
+
+    background: var(--verde);
+
+}
+
+
+
+/*---- contenedor principal y flechas ----*/
+
+/**
+ * Acá cambié tu clase principal a "bloque-carousel" para que sea una clase genérica.
+ * "recomendado" dejalo por si necesitas estilos para las películas recomendadas en particular
+ */
+.bloque-carousel{
+    margin-bottom: 70px;
+
+}
+
+.bloque-carousel .contenedor-principal {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bloque-carousel .contenedor-principal .icon-arrow-left2,
+.bloque-carousel .contenedor-principal .icon-arrow-right2{
+    position: absolute;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    font-size: 40px;
+    height: 50%;
+    top: calc(50% - 25%);
+    line-height: 40px;
+    width: 50px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+}
+
+.bloque-carousel .contenedor-principal .icon-arrow-left2:hover,
+.bloque-carousel .contenedor-principal .icon-arrow-right2:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+.bloque-carousel .contenedor-principal .icon-arrow-left2{
+    left: 0;
+}
+
+.bloque-carousel .contenedor-principal .icon-arrow-right2{
+    right: 0;
+}
+
+
+
+/*---- carousel ----*/
+
+.bloque-carousel .contenedor-carousel {
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.bloque-carousel .contenedor-carousel .carousel{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.bloque-carousel .contenedor-carousel .carousel .pelicula{
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * Acá tenías un espacio entre ".pelicula" y ".hover", así que el estilo no se estaba tomando.
+ */
+.bloque-carousel .contenedor-carousel .carousel .pelicula.hover{
+    transform: scale(1.2);
+    transform-origin: center ;
+}
+
+
+
+.bloque-carousel .contenedor-carousel .carousel .pelicula img{
+    width: 100%;
+    vertical-align: top;
+
+}
+
+
+
+
+
+
+/*---- media queries ----*/
+
+@media screen and (max-width:800px) {
+    header .logotipo{
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+
+    header .contenedor{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .pelicula-principal{
+        font-size: 14px;
+    }
+
+    .pelicula-principal .descripcion{
+        max-width: 100%;
+    }
+
+    .bloque-carousel .contenedor-carousel{
+        overflow: visible;
+    }
+
+
+    .bloque-carousel .contenedor-carousel .carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+    }
+
+    .bloque-carousel .indicadores,
+    .bloque-carousel .icon-arrow-left2,
+    .bloque-carousel .icon-arrow-right2 {
+            display: none;
+    }
+
+}
